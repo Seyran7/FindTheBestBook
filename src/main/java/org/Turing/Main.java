@@ -1,6 +1,5 @@
 package org.example;
 
-import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,5 +19,9 @@ public class Main {
         books.add(new Book("1984", "George Orwell", "Distopiya", 34.99, 4.9));
         books.add(new Book("Alchemist", "Paulo Coelho", "Fəlsəfi", 44.99, 4.7));
         books.add(new Book("Küçük Prens", "Antoine de Saint-Exupéry", "Nağıl", 29.99, 4.8));
+
+
+        books.stream().filter(element->element.getPrice()>10.00).forEach(System.err::println);
+        books.stream().sorted((b1,b2)->Double.compare(b2.getPrice(),b1.getPrice())).forEach(System.err::println);
     }
 }
